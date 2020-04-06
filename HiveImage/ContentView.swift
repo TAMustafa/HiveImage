@@ -24,7 +24,7 @@ struct ContentView: View {
                 green: greenValue * sliderValue,
                 blue: blueValue * sliderValue,
                 opacity: 0.3)
-            VStack {
+            VStack(alignment: .center) {
                 Image("Hive")
                     .resizable()
                     .scaledToFit()
@@ -35,15 +35,14 @@ struct ContentView: View {
                         blue: blueValue * (sliderValue + randomValue),
                         opacity: 0.8))
                 
-                VStack(alignment: .center) {
-                    Slider(value: $sliderValue, in: 0.2...1, step: 0.01)
-                    Text("red: \(255 * (redValue * (sliderValue + randomValue)), specifier: "%.0f")")
-                    Text("green: \(255 * (greenValue * (sliderValue + randomValue)), specifier: "%.0f")")
-                    Text("blue: \(255 * (blueValue * (sliderValue + randomValue)), specifier: "%.0f")")
-                }
-                .padding()
-                .font(.system(size: 20, weight: .bold, design: .monospaced))
+                
+                Slider(value: $sliderValue, in: 0.2...1, step: 0.01)
+                Text("red: \(255 * (redValue * (sliderValue + randomValue)), specifier: "%.0f")")
+                Text("green: \(255 * (greenValue * (sliderValue + randomValue)), specifier: "%.0f")")
+                Text("blue: \(255 * (blueValue * (sliderValue + randomValue)), specifier: "%.0f")")
             }
+            .padding()
+            .font(.system(size: 20, weight: .bold, design: .monospaced))
         }.edgesIgnoringSafeArea(.all)
     }
 }
