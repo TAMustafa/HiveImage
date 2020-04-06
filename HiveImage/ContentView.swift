@@ -10,20 +10,20 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var sliderValue: Double = 0.7
+    @State private var sliderValue: Double = 0.6
     
-    var redValue = Double.random(in: 0...1)
-    var greenValue = Double.random(in: 0...1)
-    var blueValue = Double.random(in: 0...1)
-    
-    var randomValue = Double.random(in: 0...10)
+    var redValue = Double.random(in: 0...0.8)
+    var greenValue = Double.random(in: 0...0.8)
+    var blueValue = Double.random(in: 0...0.8)
+    var randomValue = Double.random(in: 0...0.5)
     
     var body: some View {
         ZStack {
             Color(
                 red: redValue * sliderValue,
                 green: greenValue * sliderValue,
-                blue: blueValue * sliderValue, opacity: 0.3)
+                blue: blueValue * sliderValue,
+                opacity: 0.3)
             VStack {
                 Image("Hive")
                     .resizable()
